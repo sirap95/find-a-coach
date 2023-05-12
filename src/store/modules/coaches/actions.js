@@ -11,9 +11,9 @@ export default {
       hourlyRate: payload.rate,
       areas: payload.areas,
     };
-
+//TODO: 1) CHANGE THE URL FOR THE REQUEST HERE
     const response = await fetch(
-      `https://vue-find-a-coach-94503-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json?auth=${token}`,
+      `USE-YOUR-API-HERE`,
       {
         method: "PUT",
         body: JSON.stringify(coachData),
@@ -32,8 +32,9 @@ export default {
     if (!payload.forceRefresh && !context.getters.shouldUpdate) {
       return;
     }
+    //TODO: 2) CHANGE THE URL FOR THE REQUEST HERE
     const response = await fetch(
-      `https://vue-find-a-coach-94503-default-rtdb.europe-west1.firebasedatabase.app/coaches.json`
+      `USE-YOUR-API-HERE`
     );
     const responseData = await response.json();
     if (!response.ok) {

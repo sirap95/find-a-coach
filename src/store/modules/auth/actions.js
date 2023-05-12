@@ -13,12 +13,13 @@ export default {
   },
   async auth(context, payload) {
     const mode = payload.mode;
+    //TODO: 5) CHANGE THE URL FOR THE REQUEST HERE
     let url =
-      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCAivibLqw4q08CGQJ9XPegsuLgF1aCggc";
+      "USE-YOUR-ENDPOINT-FOR-SIGNIN-HERE";
 
     if (mode === "signup") {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCAivibLqw4q08CGQJ9XPegsuLgF1aCggc";
+        "USE-YOUR-ENDPOINT-FOR-SIGNUP-HERE";
     }
     const response = await fetch(url, {
       method: "POST",

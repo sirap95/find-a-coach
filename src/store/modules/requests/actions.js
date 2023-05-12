@@ -4,9 +4,9 @@ export default {
       userEmail: payload.email,
       message: payload.message,
     };
-
+//TODO: 3) CHANGE THE URL FOR THE REQUEST HERE
     const response = await fetch(
-      `https://vue-find-a-coach-94503-default-rtdb.europe-west1.firebasedatabase.app/requests/${payload.coachId}.json`,
+      `USE-YOUR-API-FOR-REALTIME-DB-HERE`,
       {
         method: "POST",
         body: JSON.stringify(newRequest),
@@ -27,8 +27,9 @@ export default {
   async loadRequests(context) {
     const coachId = context.rootGetters.userId;
     const token = context.rootGetters.token;
+    //TODO: 4) CHANGE THE URL FOR THE REQUEST HERE
     const response = await fetch(
-      `https://vue-find-a-coach-94503-default-rtdb.europe-west1.firebasedatabase.app/requests/${coachId}.json?auth=${token}`
+      `USE-YOUR-API-FOR-REALTIME-DB-HERE`
     );
     const responseData = await response.json();
     if (!response.ok) {
